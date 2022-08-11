@@ -61,6 +61,7 @@ extension UICollectionView: EmptyStateProtocol {
             
             backgroundView = emptyStateView
             if let emptyStateView = emptyStateView as? EmptyStateView {
+                emptyStateView.backgroundColor = emptyStateDataSource.backgroudColorForEmptyDataSet()
                 emptyStateView.titleLabel.attributedText = emptyStateDataSource.titleForEmptyDataSet()
                 emptyStateView.descriptionLabel.attributedText = emptyStateDataSource.descriptionForEmptyDataSet()
                 emptyStateView.image = emptyStateDataSource.imageForEmptyDataSet()

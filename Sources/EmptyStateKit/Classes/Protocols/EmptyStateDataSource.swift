@@ -14,6 +14,11 @@ public protocol EmptyStateDataSource: class {
     
     /// Asks the data source for the description of the `EmptyStateView`.
     ///
+    /// - Returns: An instance of BackgroudColor as icon of the `EmptyStateView`.
+    func backgroudColorForEmptyDataSet() -> UIColor?
+    
+    /// Asks the data source for the description of the `EmptyStateView`.
+    ///
     /// - Returns: An instance of UIImage as icon of the `EmptyStateView`.
     func imageForEmptyDataSet() -> UIImage?
     
@@ -43,6 +48,9 @@ public protocol EmptyStateDataSource: class {
 // MARK: - EmptyStateDataSource Default
 
 public extension EmptyStateDataSource {
+    func backgroudColorForEmptyDataSet() {
+        UIColor.systemBackground
+    }
     
     func imageForEmptyDataSet() -> UIImage? {
         EmptyStateView.Defaults.image
