@@ -53,9 +53,6 @@ extension UITableView: EmptyStateProtocol {
         }
     }
     
-    public func reloadData() {
-    }
-    
     private func emptyStateReload() {
         guard let emptyStateDataSource = emptyStateDataSource else { return }
         
