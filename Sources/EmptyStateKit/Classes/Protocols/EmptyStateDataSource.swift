@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 /// This protocol provides the table view object with the information it needs to construct and modify a `EmptyStateView`.
-public protocol EmptyStateDataSource: class {
+public protocol EmptyStateDataSource: AnyObject {
     
     /// Asks the data source for the description of the `EmptyStateView`.
     ///
@@ -48,7 +48,7 @@ public protocol EmptyStateDataSource: class {
 // MARK: - EmptyStateDataSource Default
 
 public extension EmptyStateDataSource {
-    func backgroudColorForEmptyDataSet() {
+    func backgroudColorForEmptyDataSet() -> UIColor? {
         UIColor.systemBackground
     }
     

@@ -32,6 +32,10 @@ final class CustomTableViewController: UITableViewController, EmptyStateDataSour
         tableView.emptyStateDataSource = self
     }
     
+    func backgroudColorForEmptyDataSet() -> UIColor? {
+        return UIColor.systemBackground
+    }
+    
     func titleForEmptyDataSet() -> NSAttributedString {
         return NSAttributedString(string: "Test title")
     }
@@ -55,6 +59,7 @@ final class CustomEmptyStateTableViewController: UITableViewController, EmptySta
         tableView.emptyStateDataSource = self
         tableView.emptyStateDelegate = self
     }
+
     
     func customViewForEmptyState() -> UIView? {
         let view = UIView()
