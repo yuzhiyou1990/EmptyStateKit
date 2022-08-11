@@ -67,15 +67,14 @@ extension UITableView: EmptyStateProtocol {
                                           title: emptyStateDataSource.titleForEmptyDataSet(),
                                           desc: emptyStateDataSource.descriptionForEmptyDataSet())
                 emptyStateView.accessibilityDescription = emptyStateDataSource.accessibilityDescriptionForEmptyDataSet()
-            } else {
-                emptyStateView.translatesAutoresizingMaskIntoConstraints = false
-                NSLayoutConstraint.activate([
-                    emptyStateView.heightAnchor.constraint(equalTo: heightAnchor),
-                    emptyStateView.widthAnchor.constraint(equalTo: widthAnchor),
-                    emptyStateView.centerYAnchor.constraint(equalTo: centerYAnchor),
-                    emptyStateView.centerXAnchor.constraint(equalTo: centerXAnchor)
-                ])
             }
+            emptyStateView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                emptyStateView.heightAnchor.constraint(equalTo: heightAnchor),
+                emptyStateView.widthAnchor.constraint(equalTo: widthAnchor),
+                emptyStateView.centerYAnchor.constraint(equalTo: centerYAnchor),
+                emptyStateView.centerXAnchor.constraint(equalTo: centerXAnchor)
+            ])
         } else {
             removeEmptyView()
             isScrollEnabled = originalScrollingValue
