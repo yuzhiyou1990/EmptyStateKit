@@ -63,9 +63,9 @@ extension UITableView: EmptyStateProtocol {
             addSubview(emptyStateView)
             if let emptyStateView = emptyStateView as? EmptyStateView {
                 emptyStateView.backgroundColor = emptyStateDataSource.backgroudColorForEmptyDataSet()
-                emptyStateView.titleLabel.attributedText = emptyStateDataSource.titleForEmptyDataSet()
-                emptyStateView.descriptionLabel.attributedText = emptyStateDataSource.descriptionForEmptyDataSet()
-                emptyStateView.image = emptyStateDataSource.imageForEmptyDataSet()
+                emptyStateView.configData(image: emptyStateDataSource.imageForEmptyDataSet(),
+                                          title: emptyStateDataSource.titleForEmptyDataSet(),
+                                          desc: emptyStateDataSource.descriptionForEmptyDataSet())
                 emptyStateView.accessibilityDescription = emptyStateDataSource.accessibilityDescriptionForEmptyDataSet()
             } else {
                 emptyStateView.translatesAutoresizingMaskIntoConstraints = false

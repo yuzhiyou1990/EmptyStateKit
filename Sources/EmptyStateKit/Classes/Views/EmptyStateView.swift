@@ -12,7 +12,7 @@ import UIKit
 final class EmptyStateView: UIView {
     
     private lazy var stackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [imageContainer, titleLabel, descriptionLabel])
+        let stackView = UIStackView(arrangedSubviews: [])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .fill
@@ -67,12 +67,6 @@ final class EmptyStateView: UIView {
         return  containerView
     }()
     
-    var image: UIImage? {
-        didSet {
-            self.imageView.image = image
-        }
-    }
-    
     var accessibilityDescription: String? {
         get {
             return self.containerView.accessibilityLabel
@@ -100,6 +94,24 @@ final class EmptyStateView: UIView {
             stackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             containerView.centerXAnchor.constraint(equalTo: centerXAnchor),
             containerView.centerYAnchor.constraint(equalTo: centerYAnchor)])
+    }
+    
+    func configData(image: UIImage?, title: NSAttributedString?, desc: NSAttributedString?) {
+        self.imageView.image = image
+        self.titleLabel.attributedText = title
+        self.descriptionLabel.attributedText = desc
+        
+        if image != nil {
+            self.stackView.addArrangedSubview(imageContainer)
+        }
+        
+        if title != nil {
+            self.stackView.addArrangedSubview(titleLabel)
+        }
+        
+        if desc != nil {
+            self.stackView.addArrangedSubview(descriptionLabel)
+        }
     }
     
     override public func didMoveToSuperview() {
