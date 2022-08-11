@@ -125,6 +125,7 @@ final class EmptyStateView: UIView {
     }
     
     struct Defaults {
+        static let height = CGFloat(160)
         static let image = UIImage(systemName: "info.circle")
         static let title = NSAttributedString(string: "Empty DataSet", attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .headline)])
         static let description = NSAttributedString(string: "Oops There's no data.", attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption1)])

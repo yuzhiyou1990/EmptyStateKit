@@ -68,8 +68,9 @@ extension UICollectionView: EmptyStateProtocol {
                 emptyStateView.accessibilityDescription = emptyStateDataSource.accessibilityDescriptionForEmptyDataSet()
             }
             emptyStateView.translatesAutoresizingMaskIntoConstraints = false
+            let height = emptyStateDataSource.heightForEmptyDataSet()
             NSLayoutConstraint.activate([
-                emptyStateView.heightAnchor.constraint(equalTo: heightAnchor),
+                emptyStateView.heightAnchor.constraint(equalToConstant: height),
                 emptyStateView.widthAnchor.constraint(equalTo: widthAnchor),
                 emptyStateView.centerYAnchor.constraint(equalTo: centerYAnchor),
                 emptyStateView.centerXAnchor.constraint(equalTo: centerXAnchor)

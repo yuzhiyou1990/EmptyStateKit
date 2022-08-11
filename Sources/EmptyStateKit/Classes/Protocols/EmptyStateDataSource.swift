@@ -14,7 +14,7 @@ public protocol EmptyStateDataSource: AnyObject {
     
     /// Asks the data source for the description of the `EmptyStateView`.
     ///
-    /// - Returns: An instance of BackgroudColor as icon of the `EmptyStateView`.
+    /// - Returns: An instance of BackgroudColor  of the `EmptyStateView`.
     func backgroudColorForEmptyDataSet() -> UIColor?
     
     /// Asks the data source for the description of the `EmptyStateView`.
@@ -36,6 +36,11 @@ public protocol EmptyStateDataSource: AnyObject {
     ///
     /// - Returns: The custom view to be used.
     func customViewForEmptyState() -> UIView?
+    
+    /// Asks the data source for the description of the `EmptyStateView`.
+    ///
+    /// - Returns: An instance of Height of the `EmptyStateView`.
+    func heightForEmptyDataSet() -> CGFloat
     
     /// Ask the data source for a localized accessibility description to be used as the `EmptyStateView` accessibilityLabel string.
     ///
@@ -66,6 +71,10 @@ public extension EmptyStateDataSource {
     
     func customViewForEmptyState() -> UIView? {
         return nil
+    }
+    
+    func heightForEmptyDataSet() -> CGFloat {
+        return EmptyStateView.Defaults.height
     }
     
     func accessibilityDescriptionForEmptyDataSet() -> String? {
