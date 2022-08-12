@@ -36,11 +36,11 @@ final class CustomTableViewController: UITableViewController, EmptyStateDataSour
         return UIColor.systemBackground
     }
     
-    func titleForEmptyDataSet() -> NSAttributedString {
+    func titleForEmptyDataSet() -> NSAttributedString? {
         return NSAttributedString(string: "Test title")
     }
     
-    func descriptionForEmptyDataSet() -> NSAttributedString {
+    func descriptionForEmptyDataSet() -> NSAttributedString? {
         return NSAttributedString(string: "Test description")
     }
     

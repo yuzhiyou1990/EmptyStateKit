@@ -33,11 +33,11 @@ final class CustomCollectionViewController: UICollectionViewController, EmptySta
         collectionView.emptyStateDelegate = self
     }
     
-    func titleForEmptyDataSet() -> NSAttributedString {
+    func titleForEmptyDataSet() -> NSAttributedString? {
         return NSAttributedString(string: "Test title")
     }
     
-    func descriptionForEmptyDataSet() -> NSAttributedString {
+    func descriptionForEmptyDataSet() -> NSAttributedString? {
         return NSAttributedString(string: "Test description")
     }
     

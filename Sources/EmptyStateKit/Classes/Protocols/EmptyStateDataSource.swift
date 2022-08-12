@@ -25,12 +25,12 @@ public protocol EmptyStateDataSource: AnyObject {
     /// Asks the data source for the title of the `EmptyStateView`.
     ///
     /// - Returns: The styled title for the empty view.
-    func titleForEmptyDataSet() -> NSAttributedString
+    func titleForEmptyDataSet() -> NSAttributedString?
     
     /// Asks the data source for the image of the `EmptyStateView`.
     ///
     /// - Returns: The styled description for the empty view.
-    func descriptionForEmptyDataSet() -> NSAttributedString
+    func descriptionForEmptyDataSet() -> NSAttributedString?
     
     /// Ask the data source for a custom view to be used as Empty State View.
     ///
@@ -46,7 +46,6 @@ public protocol EmptyStateDataSource: AnyObject {
     ///
     /// - Returns: An optional localized string describing the empty view.
     func accessibilityDescriptionForEmptyDataSet() -> String?
-
     
 }
 
@@ -61,11 +60,11 @@ public extension EmptyStateDataSource {
         EmptyStateView.Defaults.image
     }
     
-    func titleForEmptyDataSet() -> NSAttributedString {
+    func titleForEmptyDataSet() -> NSAttributedString? {
         EmptyStateView.Defaults.title
     }
     
-    func descriptionForEmptyDataSet() -> NSAttributedString {
+    func descriptionForEmptyDataSet() -> NSAttributedString? {
         EmptyStateView.Defaults.description
     }
     
