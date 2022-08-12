@@ -10,9 +10,9 @@ import UIKit
 
 extension UICollectionView: EmptyStateProtocol {
     
-    public func es_reloadData() {
+    public func es_reloadData(_ isHidden: Bool = false) {
         self.reloadData()
-        self.emptyStateReload()
+        self.emptyStateReload(isHidden)
     }
     
     /// The object that acts as the delegate of the empty state view.
@@ -52,10 +52,10 @@ extension UICollectionView: EmptyStateProtocol {
         }
     }
     
-    private func emptyStateReload() {
+    private func emptyStateReload(_ isHidden: Bool = false) {
         guard let emptyStateDataSource = emptyStateDataSource else { return }
         
-        if numberOfItems == 0 && self.subviews.count > 1 {
+        if numberOfItems == 0 && self.subviews.count > 1 && !isHidden {
             originalScrollingValue = isScrollEnabled
             isScrollEnabled = emptyStateDelegate?.enableScrollForEmptyState() ?? true
             
