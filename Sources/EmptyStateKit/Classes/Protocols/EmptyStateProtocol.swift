@@ -17,7 +17,9 @@ struct AssociatedKeys {
 
 /// This protocol provides the basic needed to override emptyViewState on anyclass that supports it
 protocol EmptyStateProtocol: AnyObject {
-    func es_reloadData()
+    func reloadDataWithEmptyState()
+    func reloadDataWithoutEmptyState()
+    
     func removeEmptyView()
     
     var numberOfItems: Int { get }

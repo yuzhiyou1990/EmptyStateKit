@@ -10,9 +10,14 @@ import UIKit
 
 extension UICollectionView: EmptyStateProtocol {
     
-    public func es_reloadData(_ isHidden: Bool = false) {
+    public func reloadDataWithEmptyState() {
         self.reloadData()
-        self.emptyStateReload(isHidden)
+        self.emptyStateReload(false)
+    }
+    
+    func reloadDataWithoutEmptyState() {
+        self.reloadData()
+        self.emptyStateReload(true)
     }
     
     /// The object that acts as the delegate of the empty state view.
