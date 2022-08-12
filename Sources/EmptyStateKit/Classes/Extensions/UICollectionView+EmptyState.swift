@@ -15,7 +15,7 @@ extension UICollectionView: EmptyStateProtocol {
         self.emptyStateReload(false)
     }
     
-    func reloadDataWithoutEmptyState() {
+    public func reloadDataWithoutEmptyState() {
         self.reloadData()
         self.emptyStateReload(true)
     }
